@@ -1,0 +1,15 @@
+<div>
+  <p-menubar [model]="items">
+    <ng-template pTemplate="start">
+    </ng-template>
+
+    <ng-template pTemplate="end">
+      <div class="theme-switch-wrapper">
+        <i class="pi pi-sun theme-icon" [class.active]="!isDarkMode"></i> <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" [(ngModel)]="isDarkMode" (change)="toggleTheme()">
+        <div class="slider round"></div>
+      </label>
+        <i class="pi pi-moon theme-icon" [class.active]="isDarkMode"></i> </div>
+    </ng-template>
+  </p-menubar>
+</div>

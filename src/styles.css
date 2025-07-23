@@ -1,1 +1,119 @@
-/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --primary-background: #ffffff;
+  --secondary-background: #f0f0f0;
+  --text-color: #333333;
+  --secondary-text-color: #666666;
+  --border-color: #dddddd;
+  --accent-color: #007bff;
+  --surface-0: #ffffff;
+  --surface-50: #fbfbfb;
+  --surface-100: #f5f5f5;
+  --surface-200: #eeeeee;
+  --surface-300: #e0e0e0;
+}
+
+body.dark-mode {
+  --primary-background: #1a1a1a;
+  --secondary-background: #2a2a2a;
+  --text-color: #e0e0e0;
+  --secondary-text-color: #b0b0b0;
+  --border-color: #444444;
+  --accent-color: #8bb2f3;
+  --surface-0: #1a1a1a;
+  --surface-50: #222222;
+  --surface-100: #2a2a2a;
+  --surface-200: #333333;
+  --surface-300: #3c3c3c;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--primary-background);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding-top: 60px;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 60px;
+}
+
+.p-menubar {
+  background-color: var(--secondary-background) !important;
+  color: var(--text-color) !important;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.p-menubar .p-menuitem-link {
+  color: var(--text-color) !important;
+}
+.p-menubar .p-menuitem-link:hover {
+  background-color: var(--surface-100) !important;
+  color: var(--accent-color) !important;
+}
+
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 15px;
+}
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--text-color);
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 20px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: var(--primary-background);
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: var(--accent-color);
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--accent-color);
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+.theme-icon {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+/* Navbar logó formázása */
+.navbar-img {
+  margin-right: 15px;
+  cursor: pointer;
+}
