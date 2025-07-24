@@ -11,6 +11,7 @@
   --surface-100: #f5f5f5;
   --surface-200: #eeeeee;
   --surface-300: #e0e0e0;
+  --box-shadow-color: rgba(0, 0, 0, 0.1);
 }
 
 body.dark-mode {
@@ -25,6 +26,7 @@ body.dark-mode {
   --surface-100: #2a2a2a;
   --surface-200: #333333;
   --surface-300: #3c3c3c;
+  --box-shadow-color: rgba(255, 255, 255, 0.08);
 }
 
 body {
@@ -43,15 +45,20 @@ html {
 .p-menubar {
   background-color: var(--secondary-background) !important;
   color: var(--text-color) !important;
-  border-bottom: 1px solid var(--border-color);
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  border: 1px solid var(--border-color);
+  transition: background-color 0.1s ease, color 0.1s ease, border-bottom 0.1s ease;
 }
 .p-menubar .p-menuitem-link {
   color: var(--text-color) !important;
+  border-radius: var(--border-radius);
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 .p-menubar .p-menuitem-link:hover {
   background-color: var(--surface-100) !important;
   color: var(--accent-color) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--box-shadow-color);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .theme-switch-wrapper {
@@ -112,8 +119,27 @@ input:checked + .slider:before {
   transition: color 0.3s ease;
 }
 
-/* Navbar logó formázása */
 .navbar-img {
   margin-right: 15px;
   cursor: pointer;
+}
+body.dark-mode .p-menubar-root-list {
+  background-color: var(--secondary-background) !important;
+  --menuitem-separator-color: var(--border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .p-menuitem-link {
+  color: var(--text-color) !important;
+  background-color: transparent !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .p-menuitem-link:hover {
+  background-color: var(--surface-100) !important;
+  color: var(--accent-color) !important;
+}
+
+body.dark-mode .p-menuitem-icon {
+  color: var(--text-color) !important;
 }

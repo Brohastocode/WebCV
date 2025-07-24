@@ -1,0 +1,77 @@
+.about-me-section {
+  padding: 80px 20px;
+  background-color: var(--primary-background);
+  color: var(--text-color);
+  text-align: center;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.about-me-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: var(--accent-color);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.about-me-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+  text-align: left;
+}
+
+.about-me-text {
+  flex: 2;
+}
+
+.about-me-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: var(--secondary-text-color);
+}
+
+.about-me-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-me-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px var(--box-shadow-color);
+  transition: box-shadow 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .about-me-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-me-image {
+    order: -1;
+    margin-bottom: 30px;
+  }
+  .about-me-text {
+    flex: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-me-section h2 {
+    font-size: 2rem;
+  }
+  .about-me-text p {
+    font-size: 1rem;
+  }
+}

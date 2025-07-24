@@ -8,6 +8,7 @@
   background-color: var(--secondary-background, #f0f0f0);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  color: var(--text-color);
 }
 
 .p-menubar {
@@ -78,3 +79,4 @@ input:checked + .slider:before {
   margin-right: 15px;
   cursor: pointer;
 }
+

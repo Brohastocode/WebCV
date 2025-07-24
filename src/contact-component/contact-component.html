@@ -1,1 +1,27 @@
-<p>contact-component works!</p>
+<section id="contact" class="contact-section">
+  <h2>Contact</h2>
+
+  <div class="contact-boxes-container">
+
+    <div class="contact-box" (click)="sendEmail()">
+      <i class="pi pi-envelope contact-icon"></i>
+      <h3>E-mail</h3>
+    </div>
+
+    <div class="contact-box" (click)="callPhone()">
+      <i class="pi pi-phone contact-icon"></i>
+      <h3>Telefon</h3>
+    </div>
+
+    <div class="contact-box" (click)="openLinkedIn()">
+      <i class="pi pi-linkedin contact-icon"></i>
+      <h3>LinkedIn</h3>
+    </div>
+
+    <div class="contact-box" (click)="openGitHub()">
+      <i class="pi pi-github contact-icon"></i>
+      <h3>GitHub</h3>
+    </div>
+
+  </div>
+</section>
