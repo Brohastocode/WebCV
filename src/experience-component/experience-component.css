@@ -1,0 +1,189 @@
+/* src/app/components/experience/experience.component.css */
+
+.experience-section {
+  padding: 80px 20px;
+  background-color: var(--primary-background); /* Alap háttérszín */
+  color: var(--text-color);
+  text-align: center;
+  transition: background-color 0.5s ease, color 0.5s ease; /* Átmenet Dark Mode-hoz */
+}
+
+.experience-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: var(--accent-color); /* Kiemelő szín a címnek */
+}
+
+.intro-text {
+  max-width: 800px;
+  margin: 0 auto 60px auto; /* Középre igazítás és alatta térköz */
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--secondary-text-color); /* Szürkébb szöveg a bevezetőnek */
+}
+
+.experience-timeline {
+  position: relative;
+  max-width: 900px; /* Maximális szélesség az idővonalnak */
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Idővonal vonal */
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px; /* Vékony vonal vastagsága */
+  background-color: var(--border-color); /* Vonalszín */
+  left: 50%; /* Középre helyezés */
+  margin-left: -2px; /* A vonal fele szélessége balra tolva a pontos középre helyezéshez */
+  border-radius: 2px;
+}
+
+.timeline-item {
+  margin-bottom: 50px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Páros és páratlan elemek elhelyezése az idővonalon */
+.timeline-item:nth-child(odd) {
+  flex-direction: row-reverse; /* Jobb oldalra helyezés */
+}
+
+.timeline-item:nth-child(even) {
+  flex-direction: row; /* Bal oldalra helyezés */
+}
+
+.timeline-content {
+  background-color: var(--secondary-background); /* Tartalom doboz háttere */
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 4px 10px var(--box-shadow-color); /* Doboz árnyéka */
+  flex: 1; /* Elfoglalja a rendelkezésre álló helyet */
+  max-width: 45%; /* Maximális szélesség a dobozoknak */
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+/* Hely az ikonnak a doboz mellett */
+.timeline-item:nth-child(odd) .timeline-content {
+  margin-right: 40px;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  margin-left: 40px;
+}
+
+.timeline-dot {
+  width: 18px;
+  height: 18px;
+  background-color: var(--accent-color); /* Kiemelő színű pont */
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* Pontosan középre */
+  z-index: 1; /* Hogy a vonal felett legyen */
+  border: 3px solid var(--primary-background); /* Szegély a pont körül */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.timeline-content h3 {
+  font-size: 1.6rem;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.timeline-date {
+  font-size: 0.95rem;
+  color: var(--secondary-text-color);
+  margin-bottom: 15px;
+}
+
+.timeline-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-color);
+  margin-bottom: 15px;
+}
+
+.timeline-tech {
+  font-size: 0.9rem;
+  color: var(--secondary-text-color);
+  margin-bottom: 10px;
+}
+
+.timeline-tech strong {
+  color: var(--accent-color);
+}
+
+.timeline-responsibilities {
+  list-style-type: disc; /* Vissza a listapontokhoz */
+  padding-left: 20px;
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+.timeline-responsibilities li {
+  margin-bottom: 5px;
+}
+
+/* --- Hover effektus --- */
+.timeline-item:hover .timeline-content {
+  transform: translateY(-5px); /* Enyhe felugrás */
+  box-shadow: 0 8px 15px var(--box-shadow-color); /* Kiemeltebb árnyék */
+}
+
+.timeline-item:hover .timeline-dot {
+  transform: translate(-50%, -50%) scale(1.2); /* Pont nagyobb lesz */
+}
+
+/* --- Reszponzivitás kisebb képernyőkre --- */
+@media (max-width: 768px) {
+  .experience-timeline::before {
+    left: 18px; /* A vonal balra tolódik */
+    margin-left: 0;
+  }
+
+  .timeline-item {
+    flex-direction: column; /* Egymás alá rendezés */
+    align-items: flex-start; /* Balra igazítás */
+    margin-bottom: 30px;
+  }
+
+  /* A tartalom dobozok szélességének beállítása és behúzása */
+  .timeline-item:nth-child(odd) .timeline-content,
+  .timeline-item:nth-child(even) .timeline-content {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%; /* Teljes szélesség */
+    width: 100%;
+    padding-left: 40px; /* Hely a vonalnak/pontnak */
+  }
+
+  .timeline-dot {
+    left: 18px; /* A pont a vonalra igazítva */
+    top: 25px; /* Kicsit lejjebb a bejegyzés tetejétől */
+    transform: translate(-50%, 0); /* Csak vízszintesen középre */
+  }
+
+  .timeline-content h3 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .experience-section h2 {
+    font-size: 2rem;
+  }
+  .intro-text {
+    font-size: 1.05rem;
+  }
+}

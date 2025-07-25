@@ -7,6 +7,7 @@ import {AboutMeComponent} from '../about-me-component/about-me-component';
 import {SkillsComponent} from '../skills-component/skills-component';
 import {ExperienceComponent} from '../experience-component/experience-component';
 import {ProjectsComponent} from '../projects-component/projects-component';
+import {CarouselModule} from 'primeng/carousel';
 
 
 
@@ -21,7 +22,8 @@ import {ProjectsComponent} from '../projects-component/projects-component';
     AboutMeComponent,
     SkillsComponent,
     ExperienceComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    CarouselModule
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'

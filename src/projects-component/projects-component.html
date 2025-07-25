@@ -1,4 +1,30 @@
 <section id="projects" class="projects-section">
-  <h2>Projects</h2>
-  <p>Itt van a tényleges "Projektek" szekció tartalma.</p>
+  <div class="container">
+    <h2>Projektjeim</h2>
+    <p class="intro-text">
+      Itt tekinthetők meg azok a projektek, amelyeken dolgoztam. Ezek a munkák bemutatják a full-stack fejlesztői képességeimet, különös tekintettel a Java backend és az Angular frontend megoldásokra.
+    </p>
+
+    <p-carousel [value]="projects" [numVisible]="3" [numScroll]="1" [responsiveOptions]="responsiveOptions" [circular]="true" [autoplayInterval]="0">
+      <ng-template let-project pTemplate="item">
+        <div class="project-card">
+          <h3>{{ project.title }}</h3>
+          <p class="project-description">
+            {{ project.description }}
+          </p>
+          <p class="project-tech">
+            <b>Technológiák:</b> {{ project.technologies }}
+          </p>
+          <ul class="project-features">
+            <li *ngFor="let feature of project.features">{{ feature }}</li>
+          </ul>
+          <div class="project-links">
+            <a *ngIf="project.githubLink" href="{{ project.githubLink }}" target="_blank" class="btn btn-primary">GitHub Repository</a>
+            <a *ngIf="project.demoLink" href="{{ project.demoLink }}" target="_blank" class="btn btn-secondary">Élő Demó</a>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+
+  </div>
 </section>

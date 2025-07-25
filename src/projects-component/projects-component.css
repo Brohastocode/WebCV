@@ -1,0 +1,209 @@
+/* src/app/components/projects/projects.component.css */
+
+.projects-section {
+  padding: 80px 20px;
+  background-color: var(--secondary-background);
+  color: var(--text-color);
+  text-align: center;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.projects-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: var(--accent-color);
+}
+
+.intro-text {
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--secondary-text-color);
+}
+
+/* --- PrimeNG Carousel specifikus stílusok --- */
+/* Fontos a ::ng-deep vagy :host ::ng-deep, hogy felülírjuk a PrimeNG belső stílusait */
+
+/* A carousel konténerének alap stílusa */
+:host ::ng-deep .p-carousel {
+  padding: 20px 0; /* Hely a navigációs nyilaknak */
+}
+
+/* A carousel elemek stílusa (a kártyák, amik görgetve vannak) */
+:host ::ng-deep .p-carousel-item {
+  padding: 0 15px; /* Távolság a kártyák között a karusszelen belül */
+}
+
+/* Navigációs nyilak stílusa */
+:host ::ng-deep .p-carousel .p-carousel-next,
+:host ::ng-deep .p-carousel .p-carousel-prev {
+  background-color: var(--accent-color);
+  color: var(--button-text-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px var(--box-shadow-color);
+  transition: background-color 0.3s ease;
+}
+
+:host ::ng-deep .p-carousel .p-carousel-next:hover,
+:host ::ng-deep .p-carousel .p-carousel-prev:hover {
+  background-color: var(--accent-hover-color);
+}
+
+/* Navigációs nyilak ikonjainak színe */
+:host ::ng-deep .p-carousel .p-carousel-next .p-icon,
+:host ::ng-deep .p-carousel .p-carousel-prev .p-icon {
+  color: var(--button-text-color);
+}
+
+/* Oldalsó nyilak pozicionálása */
+:host ::ng-deep .p-carousel .p-carousel-next {
+  right: 0;
+}
+:host ::ng-deep .p-carousel .p-carousel-prev {
+  left: 0;
+}
+
+/* Navigációs pontok (indikátorok) stílusa alul */
+:host ::ng-deep .p-carousel-indicators .p-carousel-indicator button {
+  background-color: var(--border-color);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  transition: background-color 0.3s ease;
+}
+
+:host ::ng-deep .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+  background-color: var(--accent-color);
+}
+
+/* --- Projekt kártya stílusok --- */
+.project-card {
+  background-color: var(--primary-background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 4px 10px var(--box-shadow-color);
+  text-align: left;
+  transition: all 0.3s ease;
+  height: 100%; /* Fontos, hogy a kártyák egyforma magasak legyenek a karusszelben */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* A gombok alulra kerüljenek */
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px var(--box-shadow-color);
+}
+
+.project-card h3 {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.project-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-color);
+  margin-bottom: 15px;
+}
+
+.project-tech {
+  font-size: 0.9rem;
+  color: var(--secondary-text-color);
+  margin-bottom: 10px;
+}
+
+.project-tech strong {
+  color: var(--accent-color);
+}
+
+.project-features {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+.project-features li {
+  margin-bottom: 5px;
+}
+
+.project-links {
+  margin-top: auto; /* A gombokat a kártya aljára tolja */
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: var(--button-text-color);
+  border: 1px solid var(--accent-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover-color);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--accent-color);
+  color: var(--button-text-color);
+}
+
+/* --- Reszponzivitás --- */
+@media (max-width: 768px) {
+  .projects-section h2 {
+    font-size: 2.2rem;
+  }
+  .intro-text {
+    font-size: 1.05rem;
+  }
+  .project-card {
+    padding: 20px;
+  }
+  .project-card h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .projects-section h2 {
+    font-size: 2rem;
+  }
+  .intro-text {
+    font-size: 1rem;
+  }
+  .project-card h3 {
+    font-size: 1.3rem;
+  }
+  .project-description, .project-tech, .project-features {
+    font-size: 0.9rem;
+  }
+}
